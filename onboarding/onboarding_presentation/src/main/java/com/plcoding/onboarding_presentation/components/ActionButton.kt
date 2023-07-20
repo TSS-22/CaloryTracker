@@ -1,7 +1,5 @@
 package com.plcoding.onboarding_presentation.components
 
-
-
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
