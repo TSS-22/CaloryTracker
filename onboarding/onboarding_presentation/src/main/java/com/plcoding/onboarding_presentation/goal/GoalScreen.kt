@@ -1,4 +1,4 @@
-package com.plcoding.onboarding_presentation.gender
+package com.plcoding.onboarding_presentation.goal
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,14 +23,14 @@ import com.plcoding.core.util.UiEvent
 import com.plcoding.core_ui.LocalSpacing
 import com.plcoding.calorytracker.R
 import com.plcoding.core.domain.model.ActivityLevel
-import com.plcoding.core.domain.model.Gender
+import com.plcoding.core.domain.model.GoalType
 import com.plcoding.onboarding_presentation.components.ActionButton
 import com.plcoding.onboarding_presentation.components.SelectableButton
 
 @Composable
-fun GenderScreen(
+fun GoalScreen(
     onNavigate: (UiEvent.Navigate) -> Unit,
-    viewModel: GenderViewModel = hiltViewModel()
+    viewModel: GoalViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
 
@@ -53,30 +53,42 @@ fun GenderScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = stringResource(id = R.string.whats_your_gender),
+                text = stringResource(id = R.string.lose_keep_or_gain_weight),
                 style = MaterialTheme.typography.h3,
             )
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             Row() {
                 SelectableButton(
-                    text = stringResource(id = R.string.male),
-                    isSelected = viewModel.selectedGender is Gender.Male,
+                    text = stringResource(id = R.string.lose),
+                    isSelected = viewModel.selectedGoal is GoalType.LoseWeight,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
                     onClick = {
-                        viewModel.onGenderClick(Gender.Male)
+                        viewModel.onGoalTypeSelected(GoalType.LoseWeight)
                     },
                     textStyle = MaterialTheme.typography.button.copy(
                         fontWeight = FontWeight.Normal
                     ))
                 Spacer(modifier = Modifier.width(spacing.spaceMedium))
                 SelectableButton(
-                    text = stringResource(id = R.string.female),
-                    isSelected = viewModel.selectedGender is Gender.Female,
+                    text = stringResource(id = R.string.keep),
+                    isSelected = viewModel.selectedGoal is GoalType.KeepWeight,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
                     onClick = {
-                        viewModel.onGenderClick(Gender.Female)
+                        viewModel.onGoalTypeSelected(GoalType.KeepWeight)
+                    },
+                    textStyle = MaterialTheme.typography.button.copy(
+                        fontWeight = FontWeight.Normal
+                    ))
+                Spacer(modifier = Modifier.width(spacing.spaceMedium))
+                SelectableButton(
+                    text = stringResource(id = R.string.gain),
+                    isSelected = viewModel.selectedGoal is GoalType.GainWeight,
+                    color = MaterialTheme.colors.primaryVariant,
+                    selectedTextColor = Color.White,
+                    onClick = {
+                        viewModel.onGoalTypeSelected(GoalType.GainWeight)
                     },
                     textStyle = MaterialTheme.typography.button.copy(
                         fontWeight = FontWeight.Normal

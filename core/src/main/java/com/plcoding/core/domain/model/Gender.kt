@@ -5,7 +5,7 @@ sealed class Gender (val name: String){
     object Female: Gender("female")
 
     companion object {
-        fun fromString(name: String): Gender{
+        fun fromString(name: String): Gender {
             return when(name) {
                 "male" -> Male
                 "female" -> Female

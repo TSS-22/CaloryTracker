@@ -6,7 +6,7 @@ sealed class ActivityLevel (val name: String){
     object High: ActivityLevel("high")
 
     companion object {
-        fun fromString(name: String): ActivityLevel{
+        fun fromString(name: String): ActivityLevel {
             return when(name) {
                 "low" -> Low
                 "medium" -> Medium
