@@ -98,7 +98,7 @@ fun NutrientBarInfo(
                 color = if (value <= goal) {
                     MaterialTheme.colors.onPrimary
                 } else goalExceedColor,
-                style = MaterialTheme.typography.h1,
+                style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Light,
             )
         }
