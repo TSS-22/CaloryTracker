@@ -13,7 +13,7 @@ interface OpenFoodApi {
     ): SearchDto
 
     companion object {
-        const val BASE_URL = "https//fr.openfoodfacts.org"
+        const val BASE_URL = "https://fr.openfoodfacts.org"
     }
 
 }
