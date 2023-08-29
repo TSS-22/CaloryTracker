@@ -84,7 +84,6 @@ fun ExpandableMeal(
                         unit = stringResource(id = R.string.kcal),
                         amountTextSize = 30.sp
                     )
-                    //test
                     Row {
                         NutrientInfo(
                             name = stringResource(id = R.string.carbs),
