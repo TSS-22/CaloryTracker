@@ -1,5 +1,7 @@
 package com.plcoding.tracker_presentation.tracker_overview
 
+import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -36,10 +38,15 @@ class TrackerOverviewViewModel @Inject constructor(
         preferences.saveShouldShowOnboarding(shouldShow = false)
     }
 
+    @SuppressLint("UnsafeOptInUsageError")
     fun onEvent(event: TrackerOverviewEvent){
         when(event){
             is TrackerOverviewEvent.OnAddFoodClick -> {
                 viewModelScope.launch {
+                    Log.e("WESH", (Route.SEARCH+ "/${event.meal.mealType.name}"
+                            + "/${state.date.dayOfMonth}"
+                            + "/${state.date.monthValue}"
+                            + "/${state.date.year}"))
                     _uiEvent.send(
                         UiEvent.Navigate(
                             route = Route.SEARCH
