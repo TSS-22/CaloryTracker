@@ -1,7 +1,6 @@
 package com.plcoding.tracker_presentation.search
 
-import android.os.Build
-import androidx.annotation.RequiresApi
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,7 +32,6 @@ import com.plcoding.tracker_presentation.search.component.SearchTextField
 import com.plcoding.tracker_presentation.search.component.TrackableFoodItem
 import java.time.LocalDate
 
-@RequiresApi(Build.VERSION_CODES.M)
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun SearchScreen(
