@@ -44,7 +44,7 @@ android {
 }
 
 dependencies {
-    implementation("ch.qos.logback:logback-classic:1.4.11")
+    implementation("ch.qos.logback:logback-classic:1.2.11")
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
 

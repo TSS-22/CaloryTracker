@@ -28,7 +28,7 @@ import com.plcoding.calorytracker.R
 import com.plcoding.core_ui.LocalSpacing
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.Icon
-
+import androidx.compose.ui.platform.testTag
 
 
 @Composable
@@ -70,6 +70,7 @@ fun SearchTextField(
                 .padding(spacing.spaceMedium)
                 .padding(end = spacing.spaceMedium)
                 .onFocusChanged { onFocusChanged(it) }
+                .testTag("search_textField")
         )
         if(shouldShowHint){
             Text(

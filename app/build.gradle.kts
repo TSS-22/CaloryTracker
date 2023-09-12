@@ -16,7 +16,7 @@ android {
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.plcoding.calorytracker.HiltTestRunner"
     }
 
     buildTypes {
@@ -43,6 +43,11 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+    }
+
+    packagingOptions {
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/LICENSE-notice.md")
     }
 
 }
